@@ -4,7 +4,7 @@ import com.yt.jpa.entity.Person;
 
 import java.util.List;
 
-public interface PersonDao {
-   void add(Person person);
-   List<Person> listPersons();
+public interface Dao<T> {
+   void add(T t);
+   List<T> listT();
 }

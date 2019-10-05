@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
-public class PersonDaoImp implements PersonDao {
+public class PersonDaoImp implements Dao<Person> {
 
    @PersistenceContext
    private EntityManager em;
@@ -21,7 +21,7 @@ public class PersonDaoImp implements PersonDao {
    }
 
    @Override
-   public List<Person> listPersons() {
+   public List<Person> listT() {
       CriteriaQuery<Person> criteriaQuery = em.getCriteriaBuilder().createQuery(Person.class);
       @SuppressWarnings("unused")
       Root<Person> root = criteriaQuery.from(Person.class);
