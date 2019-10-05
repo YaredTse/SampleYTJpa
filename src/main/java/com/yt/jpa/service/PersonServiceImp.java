@@ -1,6 +1,6 @@
 package com.yt.jpa.service;
 
-import com.yt.jpa.dao.PersonDao;
+import com.yt.jpa.dao.Dao;
 import com.yt.jpa.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.List;
 public class PersonServiceImp implements PersonService {
 
    @Autowired
-   private PersonDao userDao;
+   private Dao<Person> userDao;
 
    @Transactional
    @Override
@@ -27,7 +27,7 @@ public class PersonServiceImp implements PersonService {
    @Transactional(readOnly = true)
    @Override
    public List<Person> listPersons() {
-      return userDao.listPersons();
+      return userDao.listT();
    }
 
 }
